@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "gold-store": {
+    "jewelry-store": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/gold-store",
+            "outputPath": "dist/jewelry-store",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -65,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "gold-store:build"
+            "browserTarget": "jewelry-store:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "gold-store:build:production"
+              "browserTarget": "jewelry-store:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gold-store:build"
+            "browserTarget": "jewelry-store:build"
           }
         },
         "test": {
@@ -113,16 +114,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "gold-store:serve"
+            "devServerTarget": "jewelry-store:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "gold-store:serve:production"
+              "devServerTarget": "jewelry-store:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "gold-store"
+  "defaultProject": "jewelry-store"
 }

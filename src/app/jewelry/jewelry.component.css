@@ -1,0 +1,23 @@
+.container {
+    position: fixed;
+    top: 15vh;
+    left: 20vw;
+    width: 60vw;
+    
+}
+
+.loggedDetail {
+    position: fixed;
+    top: 6vh;
+    left: 80vw;
+    width: 20vw;    
+}
+
+.tab {
+    display: inline-block;
+    width: 100px;
+}
+
+.logout {
+    float: right;
+}

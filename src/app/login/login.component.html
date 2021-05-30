@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>{{title}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="well">
+                <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" class="form-control" formControlName="username">
+                        <span class="help-block"
+                            *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched">Please provide
+                            username</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control" formControlName="password">
+                        <span class="help-block"
+                            *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Please provide
+                            password</span>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+                        <span> | </span>
+                        <button class="btn btn-danger" type="button" (click)="onCancel()">Cancel</button>
+                    </div>                                 
+                </form>                
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="alert alert-danger" *ngIf="errorMessage">
+                <a class="close" (click)="onCloseError()">&times;</a>
+                <p><em>{{errorMessage}}</em></p>
+            </div>      
+        </div>    
+    </div>
+</div>

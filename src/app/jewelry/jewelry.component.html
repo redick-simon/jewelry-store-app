@@ -1,0 +1,45 @@
+<div class="loggedDetail">Welcome {{user}}! {{userType}}</div>
+<div class="container">    
+    <div class="row">
+        <div class="col-xs-12">
+            <form [formGroup]="jewelryForm" (ngSubmit)="onCalculate()">
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" id="price" class="form-control" formControlName="price">                    
+                </div>
+                <div class="form-group">
+                    <label for="weight">Weight</label>
+                    <input type="number" id="weight" class="form-control" formControlName="weight">
+                </div>
+                <div class="form-group">
+                    <label for="totalAmount">Total Price</label>
+                    <input type="number" id="totalAmount" class="form-control"
+                        formControlName="totalPrice">
+                </div>
+                <div class="form-group" *ngIf="userType === PrivilegedUser">
+                    <label for="discount">Discount %</label>
+                    <input type="number" id="discount" class="form-control" 
+                        formControlName="discount">
+                </div>
+                <br>
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">Calculate</button>
+                    <span class="tab"></span>
+                    <button class="btn btn-primary" type="button" 
+                        (click)="onPopup()" [disabled]="!jewelryForm.getRawValue().totalPrice">Print to Screen</button>
+                    <span class="tab"></span>
+                    <button class="btn btn-primary" type="button" 
+                        (click)="onPrintToFile()">Print to File</button>
+                    <span class="tab"></span>
+                    <button class="btn btn-primary logout" type="button"
+                        (click)="onPrintPaper()">Print to Paper</button>
+                </div>
+                <br>
+                <div class="form-group">
+                    <button class="btn btn-primary logout" type="button" (click)="onLogout()">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<ng-template appPlugin></ng-template>

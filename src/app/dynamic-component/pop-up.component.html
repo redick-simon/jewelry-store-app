@@ -1,0 +1,11 @@
+<div class="backdrop" (click)="onClose()"></div>
+<div class="alert-box">    
+    <h3>Bill Detail</h3>
+    <p>jewelry Price per gram : {{ price }}</p>
+    <p>Weight : {{ weight }} gram</p>
+    <p *ngIf="discount">Discount : {{ discount }} %</p>
+    <p>TotalPrice : {{ totalPrice }}</p>
+    <div class="alert-box-actions">
+        <button class="btn btn-primary" (click)="onClose()">Close</button>
+    </div>
+</div>
